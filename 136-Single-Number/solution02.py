@@ -12,21 +12,19 @@
 # Your algorithm should have a linear runtime complexity. Could you implement it 
 # without using extra memory?
 # ==============================================================================
-# Method: Hash Table
+# Method: XOR
 # Time Complexity: O(N)
-# Space Complexity: O(N)
+# Space Complexity: O(1)
 # ==============================================================================
 
 class Solution:
     # @param {integer[]} nums
     # @return {integer}
     def singleNumber(self, nums):
-        dic = {}
+        res = 0
         for i in nums:
-            dic[i] = 2 if dic.get(i) else 1
-        for i in dic.keys():
-            if dic[i] == 1:
-                return i
+            res ^= i
+        return res
 
 if __name__ == '__main__':
-    print Solution().singleNumber([3])
+    print Solution().singleNumber([1,1,2,2,3,3,4,5,5])
