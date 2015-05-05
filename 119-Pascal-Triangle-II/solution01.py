@@ -29,4 +29,4 @@ class Solution:
             for i in range(0, lastLength-1):
                 thisRow.append(lastRow[i]+lastRow[i+1])
             thisRow.append(1)
-            return thisRow            
+            return thisRow
