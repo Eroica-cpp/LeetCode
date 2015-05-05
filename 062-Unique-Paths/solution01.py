@@ -21,19 +21,23 @@
 # ==============================================================================
 
 class Solution:
-    # @return a list of lists of integers
-    def generate(self, numRows):
-        return [self.helper(i) for i in range(numRows)] 
+    # @param {integer} m
+    # @param {integer} n
+    # @return {integer}
+    def uniquePaths(self, m, n):
+        if m < 1 and n < 1:
+            return 0
+        elif m == 1 and n == 1:
+            return 1
+        
+        tmp_row = [1] * n
+        dp = [tmp_row] * m
+        
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = dp[i-1][j] + dp[i][j-1]
 
-    def helper(self, num):
-        if num == 0:
-            return [1]
-        elif num == 1:
-            return [1, 1]
-        else:
-            last = self.helper(num-1)
-            current = [1]
-            for i in range(num-1):
-                current.append(last[i]+last[i+1])
-            current.append(1)
-            return current
+        return dp[m-1][n-1]
+
+if __name__ == '__main__':
+    print Solution().uniquePaths(1, 2)
