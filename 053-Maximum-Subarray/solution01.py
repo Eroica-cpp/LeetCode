@@ -17,7 +17,10 @@
 # If you have figured out the O(n) solution, try coding another solution using 
 # the divide and conquer approach, which is more subtle.
 # ==============================================================================
-
+# Method: Simple DP implementation
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# Note: Try the divide and conquer approach next time
 # ==============================================================================
 
 class Solution:
