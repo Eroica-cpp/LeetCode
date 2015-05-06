@@ -18,7 +18,7 @@
 # ==============================================================================
 # Method: Traverse
 # Time Complexity: O(N)
-# Space Complexity: O(N)
+# Space Complexity: O(1)
 # Note: Try binary search
 # ==============================================================================
 
@@ -33,6 +33,6 @@ class Solution:
             if target > nums[i] and target <= nums[i+1]:
                 return i+1
         return len(nums)
-        
+
 if __name__ == '__main__':
     print Solution().searchInsert([1,3,5,6], 5)
