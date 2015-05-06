@@ -12,7 +12,7 @@
 # 
 # Write a function to determine if a given target is in the array.
 # ==============================================================================
-# Method: Binary Search
+# Method: Loop
 # Time Complexity: O(N)
 # Space Complexity: O(1)
 # ==============================================================================
