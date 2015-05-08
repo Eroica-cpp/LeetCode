@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # ==============================================================================
 # Author:   Tao Li (taoli@ucsd.edu)
-# Date:     May 2, 2015
+# Date:     May 8, 2015
 # Question: 189-Rotate-Array
 # Link:     https://leetcode.com/problems/rotate-array/
 # ==============================================================================
@@ -20,13 +20,17 @@
 # Could you do it in-place with O(1) extra space?
 # Related problem: Reverse Words in a String II
 # ==============================================================================
+# Method: In place with O(1) extra space
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# ==============================================================================
 
 class Solution:
     # @param nums, a list of integer
     # @param k, num of steps
     # @return nothing, please modify the nums list in-place.
     def rotate(self, nums, k):
-    	n = len(nums)
-    	k = k % n
-    	if n > 1 and  k > 0:
-    		nums[:] = nums[n-k:] + nums[:n-k]
+        n = len(nums)
+        k = k % n
+        if n > 1 and  k > 0:
+            nums[:] = nums[n-k:] + nums[:n-k]
