@@ -9,6 +9,10 @@
 # 
 # The digits are stored such that the most significant digit is at the head of the list.
 # ====================================================================
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# ====================================================================
+
 class Solution:
     # @param {integer[]} digits
     # @return {integer[]}
