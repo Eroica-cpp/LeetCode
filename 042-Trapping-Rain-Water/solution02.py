@@ -11,7 +11,7 @@
 # For example, 
 # Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 # ==============================================================================
-# Method: Naive method
+# Method: Shrink from two sides
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 # ==============================================================================
