@@ -22,7 +22,7 @@
 # ==============================================================================
 # Method: Traverse
 # Time Complexity: O(n)
-Space Complexity: O(n)
+# Space Complexity: O(n)
 # ==============================================================================
 
 # Definition for an interval.
