@@ -57,3 +57,4 @@ if __name__ == '__main__':
     s = "()(())"
     s = "((()))"
     print Solution().longestValidParentheses(s)
+
