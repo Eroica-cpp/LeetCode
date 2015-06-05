@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # ==============================================================================
 # Author:   Tao Li (taoli@ucsd.edu)
-# Date:     Jun 4, 2015
+# Date:     Jun 5, 2015
 # Question: 082-Remove-Duplicates-from-Sorted-List-II
 # Link:     https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 # ==============================================================================
@@ -12,7 +12,9 @@
 # Given 1->2->3->3->4->4->5, return 1->2->5.
 # Given 1->1->1->2->3, return 2->3.
 # ==============================================================================
-# Method: Two pointers
+# Method: Two pointers; set dummy head
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 # ==============================================================================
 
 # Definition for singly-linked list.
