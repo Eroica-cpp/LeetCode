@@ -26,7 +26,9 @@
 # 00011
 # Answer: 3
 # ==============================================================================
-# Method: tag in-place
+# Method: tag adjacent points; tag in-place
+# Time Complexity: O(n^2)
+# Space Complexity: O(1)
 # ==============================================================================
 
 class Solution:
