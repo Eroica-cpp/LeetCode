@@ -14,6 +14,10 @@
 # Credits:
 # Special thanks to @mithmatt for adding this problem and creating all test cases.
 # ==============================================================================
+# Method: Naive method; one pass
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# ==============================================================================
 
 # Definition for singly-linked list.
 # class ListNode:
