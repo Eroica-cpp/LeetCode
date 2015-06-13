@@ -37,15 +37,11 @@ class Solution:
     # @param {TreeNode} root
     # @return {TreeNode}
     def invertTree(self, root):
-        head = root
-        self.traverse(root)
-        return head
-
-    def traverse(self, root):
         if not root:
             return
-        
-        root.left, root.right = root.right, root.left
-        self.traverse(root.left)
-        self.traverse(root.right)
 
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+        
