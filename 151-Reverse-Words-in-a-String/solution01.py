@@ -40,4 +40,3 @@ class Solution:
             new[i], new[-i-1] = new[-i-1], new[i]
         
         return " ".join(new)
-        
