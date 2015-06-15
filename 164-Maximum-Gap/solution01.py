@@ -37,4 +37,4 @@ class Solution:
             maxVal = max(maxVal, nums[i+1]-nums[i])
 
         return maxVal
-
+        
