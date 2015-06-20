@@ -21,15 +21,9 @@ class Solution:
         for i in s:
             if i in ['(', '[', '{']:
                 stack.append(i)
-            elif i in [')', ']', '}']:
-                if len(stack) == 0:
-                    return False
-                elif pairs[stack[-1]] == i:
-                    stack.pop()
-                else:
-                    return False
+            elif i in [')', ']', '}'] and stack and pairs[stack[-1]] == i:
+                stack.pop()
+            else:
+                return False
 
-        if len(stack) > 0:
-            return False
-        else:
-            return True
+        return not stack
