@@ -19,7 +19,10 @@ S = "rabbbit", T = "rabbit"
 
 Return 3.
 ==============================================================================
-Method: Naive method; maintain a window
+Method: Recursion
+Time Complexity: Exp
+Space Complexity: Exp
+Note: ok but TLE
 ==============================================================================
 """
 
@@ -50,24 +53,25 @@ class Solution:
             tUnique.append(t[i])
             i = j
 
-        res = 0
         sUniqLength, tUniqLength = len(sUnique), len(tUnique)
-        i = 0
-        while i < sUniqLength:
-            j = i
-            if j < sUniqLength and j-i < tUniqLength and sUnique[j] == tUnique[j-i]:
-                while j < sUniqLength and j-i < tUniqLength and sUnique[j] == tUnique[j-i]:
-                    j += 1
-                if j-i == tUniqLength:
-                    stack = [self.combination(sCounter[k], tCounter[k-i]) for k in xrange(i,j)]
-                    val = 1
-                    while stack:
-                        val *= stack.pop()
-                    res += val
-                i = j
-            else:
-                i += 1
+        global res
+        res = 0
+        self.helper(1, sCounter, tCounter, sUnique, tUnique)
         return res
+
+    def helper(self, tmpTimes, sCounter, tCounter, sUnique, tUnique):
+        global res
+        if not tUnique:
+            res += tmpTimes
+            return
+        elif not sUnique:
+            return
+
+        if sUnique[0] == tUnique[0]:
+            self.helper(tmpTimes*self.combination(sCounter[0], tCounter[0]), sCounter[1:], tCounter[1:], sUnique[1:], tUnique[1:])
+            self.helper(tmpTimes, sCounter[1:], tCounter, sUnique[1:], tUnique)
+        else:
+            self.helper(1, sCounter[1:], tCounter, sUnique[1:], tUnique)
 
     def combination(self, m, n):
         val = 1
@@ -81,8 +85,9 @@ class Solution:
         return val
 
 if __name__ == '__main__':
-    s, t = "rabbbiiitr||rabbbiiit", "rabbit"
+    s, t = "rabbbit||rabbit", "rabbit"
     s, t = "aacaacca", "ca"
+    s, t = "aaa||aaaa", "ab"
+    s, t = "", ""
+    s, t = "aabdbaabeeadcbbdedacbbeecbabebaeeecaeabaedadcbdbcdaabebdadbbaeabdadeaabbabbecebbebcaddaacccebeaeedababedeacdeaaaeeaecbe", "bddabdcae"
     print Solution().numDistinct(s, t)
-    # m, n = 5,2
-    # print Solution().combination(m, n)
