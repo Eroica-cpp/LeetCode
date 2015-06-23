@@ -38,11 +38,7 @@ class Solution:
             return
 
         root = TreeNode(preorder[s1])
-        idx = s2
-        while idx <= e2:
-            if inorder[idx] == preorder[s1]:
-                break
-            idx += 1
+        idx = s2 + inorder[s2:e2+1].index(root.val)
 
         root.left = self.construct(preorder, inorder,s1+1,s1+idx-s2,s2,idx-1)
         root.right = self.construct(preorder, inorder,s1+idx-s2+1,e1,idx+1,e2)
