@@ -21,7 +21,7 @@ Space Complexity: O(n^2)
 Note: 
 1. Reference: http://www.cnblogs.com/lihaozy/archive/2012/12/31/2840152.html
 2. EDIT[i, j] = min(EDIT[i-1,j]+1, EDIT[i,j-1]+1, EDIT[i-1,j-1]+f(x[i],y[i]))
-3. thought AC, I am still confused with the exchange case, say "ba" -> "ab"
+3. exchangement is not considered as one operation! differs from math definition
 ==============================================================================
 """
 
