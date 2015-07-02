@@ -11,6 +11,10 @@
 # You may assume that the array is non-empty and the majority element always 
 # exist in the array.
 # ==============================================================================
+# Method: hash table
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+# ==============================================================================
 
 class Solution:
     # @param {integer[]} nums
