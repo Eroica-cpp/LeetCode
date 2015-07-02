@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/Eroica-cpp/LeetCode.svg?branch=master)](https://travis-ci.org/Eroica-cpp/LeetCode)
-LeetCode Solutions
+LeetCode Solutions [![Build Status](https://travis-ci.org/Eroica-cpp/LeetCode.svg?branch=master)](https://travis-ci.org/Eroica-cpp/LeetCode)
 ==================
 My solutions for questions in [LeetCode OJ](https://leetcode.com/), where you may find the problem description. The source code is self-contained with problem description, solution dicssussion, time and space complexity analysis, and the source code itself. All solutions have passed 
 the [LeetCode OJ](https://leetcode.com/).
