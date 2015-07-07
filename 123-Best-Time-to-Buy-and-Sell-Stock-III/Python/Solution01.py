@@ -16,9 +16,16 @@ Note:
 You may not engage in multiple transactions at the same time 
 (ie, you must sell the stock before you buy again).
 ==============================================================================
-Method: Two passes
+Method: 2D DP
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(n)
+Note: 
+1. greedy approach - find the top two best transaction - is wrong, consider 
+a counterexample: [6,1,3,2,4,7]. 
+2. refer to DP solution in #121-Best-Time-to-Buy-and-Sell-Stock
+Reference: 
+1. http://segmentfault.com/a/1190000002565570
+2. http://liangjiabin.com/blog/2015/04/leetcode-best-time-to-buy-and-sell-stock.html
 ==============================================================================
 """
 
@@ -27,27 +34,26 @@ class Solution:
     # @return {integer}
     def maxProfit(self, prices):
         size = len(prices)
-        minIdx = maxIdx = tmpMinIdx = 0
-        minVal, maxVal = float('inf'), 0
+        if size <= 1:
+            return 0
 
+        left = [0] * size
+        right = [0] * size
+
+        minVal = prices[0]
+        for i in xrange(1, size):
+            left[i] = max(left[i-1], prices[i]-minVal)
+            minVal = min(minVal, prices[i])
+
+        maxVal = prices[-1]
+        for j in xrange(2, size+1):
+            right[-j] = max(right[-j+1], maxVal-prices[-j])
+            maxVal = max(maxVal, prices[-j])
+
+        res = 0
         for i in xrange(size):
-            if prices[i] < minVal: 
-                minVal = prices[i]
-                tmpMinIdx = i
-            if prices[i] - minVal > maxVal:
-                maxVal = prices[i] - minVal
-                maxIdx = i
-                minIdx = tmpMinIdx
-
-        profit = maxVal
-        minVal, maxVal = float('inf'), 0
-
-        for i in range(0,minIdx)+range(maxIdx+1,size):
-            if prices[i] < minVal: minVal = prices[i]
-            if prices[i] - minVal > maxVal: maxVal = prices[i] - minVal
-
-        profit += maxVal
-        return profit
+            res = max(res, left[i]+right[i])
+        return res
 
 if __name__ == '__main__':
     prices = [1,10,20,3,4,5, 1, 10, 2]
