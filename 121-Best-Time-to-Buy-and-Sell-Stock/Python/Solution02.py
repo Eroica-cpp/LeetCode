@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # ==============================================================================
 # Author:   Tao Li (taoli@ucsd.edu)
-# Date:     May 5, 2015
+# Date:     Jul 7, 2015
 # Question: 121-Best-Time-to-Buy-and-Sell-Stock
 # Link:     https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 # ==============================================================================
@@ -12,23 +12,23 @@
 # and sell one share of the stock), design an algorithm to find the maximum 
 # profit.
 # ==============================================================================
-# Method: One pass
+# Method: DP
 # Time Complexity: O(n)
-# Space Complexity: O(1)
+# Space Complexity: O(n)
 # ==============================================================================
 
 class Solution:
     # @param {integer[]} prices
     # @return {integer}
     def maxProfit(self, prices):
-        if len(prices) <= 1:
+        size = len(prices)
+        if size <= 1:
             return 0
-        minVal = float('inf')
-        diff = 0
-        for i in range(len(prices)):
-            if prices[i] < minVal:
-                minVal = prices[i]
-            if prices[i] - minVal > diff:
-                diff = prices[i] - minVal
-        return diff
 
+        dp = [0] * size
+        minVal = prices[0]
+        for i in xrange(1, size):
+            dp[i] = max(dp[i-1], prices[i]-minVal)
+            minVal = prices[i] if prices[i] < minVal else minVal
+
+        return dp[-1]
