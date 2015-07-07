@@ -49,4 +49,4 @@ class Queue:
 
     # @return an boolean
     def empty(self):
-        return self.items == []
+        return not self.items
