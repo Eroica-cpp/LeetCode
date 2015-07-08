@@ -19,14 +19,14 @@
 // ==============================================================================
 
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <iostream>
 using namespace std;
 
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        map<int, int> counter;
+        unordered_map<int, int> counter;
         int size = nums.size();
         for (int i = 0; i < size; i ++) {
             if (counter.find(nums[i]) == counter.end()) counter[nums[i]] = 0;
