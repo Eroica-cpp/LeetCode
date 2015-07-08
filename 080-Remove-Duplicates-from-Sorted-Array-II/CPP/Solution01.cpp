@@ -13,43 +13,46 @@
 // Your function should return length = 5, with the first five elements of nums 
 // being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
 // ==============================================================================
-// Method: use extra space to store appear times
+// Method: use extra space to store appear times; map
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-// Note: 
-// 1. try not use extra space next time
-// 2. this solution would fail in case of having negative integer elements.
 // ==============================================================================
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <vector>
+#include <map>
+#include <iostream>
+using namespace std;
 
-int removeDuplicates(int* nums, int numsSize) {
-    if (numsSize == 0) return 0;
-    int len = nums[numsSize-1] + 1;
-    int* counter;
-    counter = (int*) malloc(sizeof(int) * len);
-
-    int index = 0, i;
-    for (i = 0; i < numsSize; i++) {
-        if (counter[nums[i]] < 2) {
-            nums[index++] = nums[i];
-            counter[nums[i]] ++;
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        map<int, int> counter;
+        int size = nums.size();
+        for (int i = 0; i < size; i ++) {
+            if (counter.find(nums[i]) == counter.end()) counter[nums[i]] = 0;
         }
+
+        int index = 0;
+        for (int i = 0; i < size; i++) {
+            if (counter[nums[i]] < 2) {
+                nums[index++] = nums[i];
+                counter[nums[i]] ++;
+            }
+        }
+        return index;
     }
-    return index;
-}
+};
 
 /* Unit Test */
-#define N 7
 int main(int argc, char const *argv[])
 {
-    int a[N] = {1,1,1,2,2,2,3};
-    int len = removeDuplicates(a, N);
-    int i = 0;
-    for (; i < N; i++)
-        printf("%d\n", a[i]);
-    printf("len = %d\n", len);
-    
+    Solution s;
+    int tmp[6] = {1,1,1,2,2,3};
+    vector<int> v(tmp, tmp+6);
+    int len = s.removeDuplicates(v);
+    for (int i = 0; i < v.size(); i ++) {
+        cout << v[i] << endl;
+    }
+    cout << "length: " << len << endl;
     return 0;
 }
