@@ -14,10 +14,9 @@
 # Your function should return length = 5, with the first five elements of nums 
 # being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
 # ==============================================================================
-# Method: hash table; pointer
+# Method: maintain a counter variable
 # Time Complexity: O(n)
-# Space Complexity: O(n)
-# Note: Try not use hash table next time, try a new method of space complexity O(1)
+# Space Complexity: O(1)
 # ==============================================================================
 
 class Solution:
@@ -25,25 +24,15 @@ class Solution:
     # @return {integer}
     def removeDuplicates(self, nums):
         size = len(nums)
-        
-        if size <= 2:
-            return size
-        
-        dic = {}
-        counter = 0
-        ptr = 0
-        for i in xrange(size):
-            if dic.get(nums[i]) >= 2:
-                continue
-            elif dic.get(nums[i]) is None:
-                dic[nums[i]] = 1
-            elif dic.get(nums[i]) == 1:
-                dic[nums[i]] = 2
-            nums[ptr] = nums[i]
-            ptr += 1
-            counter += 1
+        if size <= 2: return size
 
-        return counter
+        index = 2
+        for i in xrange(2,size):
+            if nums[i] != nums[index-2]:
+                nums[index] = nums[i]
+                index += 1
+
+        return index
 
 if __name__ == '__main__':
     nums = [1,1,1,2,2,3]
