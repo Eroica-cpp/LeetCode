@@ -27,13 +27,10 @@ using namespace std;
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        int i = 0;
-        int length = nums.size();
-        while (i < length) {
-            if (nums[i] == target) break;
-            i ++;
+        for (int i = 0; i < nums.size(); i ++) {
+            if (nums[i] == target) return i;
         }
-        return i < length ? i : -1;
+        return -1;
     }
 };
 

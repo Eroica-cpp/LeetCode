@@ -21,13 +21,11 @@ Space Complexity: O(1)
 */
 
 int search(int* nums, int numsSize, int target) {
-    int i = 0;
-    while (i < numsSize) {
-        if (nums[i] == target) 
-            break;
-        i ++;
+    int i;
+    for (i = 0; i < numsSize; i ++) {
+        if (nums[i] == target) return i;
     }
-    return (i < numsSize) ? i : -1;
+    return -1;
 }
 
 /* Unit Test */
