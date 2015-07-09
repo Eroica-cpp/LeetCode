@@ -13,7 +13,7 @@
 # Write a function to determine if a given target is in the array.
 # ==============================================================================
 # Method: Binary Search
-# Time Complexity: O(N)
+# Time Complexity: O(log n)
 # Space Complexity: O(1)
 # Note: 
 # 1. An extension of question #033-Search-in-Rotated-Sorted-Array

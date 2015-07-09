@@ -12,8 +12,8 @@
 # 
 # Write a function to determine if a given target is in the array.
 # ==============================================================================
-# Method: Loop
-# Time Complexity: O(N)
+# Method: loop; python build-in
+# Time Complexity: O(n)
 # Space Complexity: O(1)
 # ==============================================================================
 
