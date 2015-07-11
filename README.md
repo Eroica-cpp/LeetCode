@@ -5,10 +5,10 @@ the [LeetCode OJ](https://leetcode.com/).
 
 Progress
 ------------------
-180+/210 questions completed.
+190+/210 questions completed.
 
 License
 ------------------
-The content of this project is licensed under the
+The content of this project is released under the
 [Creative Commons Attribution 3.0 license](http://creativecommons.org/licenses/by/3.0/us/deed.en_US),
-and the source code is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
+and the source code is released under the [MIT license](http://opensource.org/licenses/mit-license.php).
