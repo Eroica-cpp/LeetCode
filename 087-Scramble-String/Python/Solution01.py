@@ -57,7 +57,7 @@ class Solution:
         if size < 4 or s1 == s2: return True
 
         for i in xrange(1, size):
-            if (self.isScramble(s1[:i],s2[:i]) and self.isScramble(s1[i:], s2[i:])) or (self.isScramble(s1[:i], s2[-i:]) and self.isScramble(s1[i:], s2[:-i]) ):
+            if (self.isScramble(s1[:i],s2[:i]) and self.isScramble(s1[i:], s2[i:])) or (self.isScramble(s1[:i], s2[-i:]) and self.isScramble(s1[i:], s2[:-i])):
                 return True
 
         return False
