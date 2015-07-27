@@ -18,8 +18,8 @@
 # Output: index1=1, index2=2
 # ==============================================================================
 # Method: Sorted, Two pointers
-# Time Complexity: O(NlogN)
-# Space Complexity: O(1)
+# Time Complexity: O(n logn)
+# Space Complexity: O(n)
 # ==============================================================================
 
 class Solution:
@@ -28,24 +28,23 @@ class Solution:
     # @return {integer[]}
     def twoSum(self, nums, target):
         new = sorted(nums)
-        low = 0
-        high = len(nums) - 1
+        low, high = 0, len(nums)-1
+
         while low < high:
-            if new[low] + new[high] == target:
-                break
-            elif new[low] + new[high] > target:
-                high -= 1
-            else:
-                low += 1
+            tmp = new[low] + new[high]
+            if tmp == target: break
+            elif tmp > target: high -= 1
+            else: low += 1
 
-        idx1 = 0
-        idx2 = 1
-        while new[low] != nums[idx1]:
-            idx1 += 1
-        while new[high] != nums[-idx2]:
-            idx2 += 1
-        return sorted([idx1+1, len(nums)-idx2+1])
+        res, bag = [], [new[low], new[high]]
+        i = 0
+        while len(res) < 2 and i < len(nums):
+            if nums[i] in bag:
+                res.append(i+1)
+            i += 1
 
+        return res
 
 if __name__ == '__main__':
-    print Solution().twoSum([-1,-2,-3,-4,-5], -8) #([0,4,3,0], 0)
+    nums, target = [150,24,79,50,88,345,3], 200
+    print Solution().twoSum(nums, target)
