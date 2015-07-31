@@ -18,6 +18,10 @@
 # 
 # For the purpose of this problem, we define empty string as valid palindrome.
 # ==============================================================================
+# Method: Two passes
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+# ==============================================================================
 
 class Solution:
     # @param {string} s
