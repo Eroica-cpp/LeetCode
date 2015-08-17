@@ -4,7 +4,7 @@
 Author:   Tao Li (taoli@ucsd.edu)
 Date:     Aug 16, 2015
 Question: 258-Add-Digits
-Link:     https://leetcode.com/problems/binary-tree-paths/
+Link:     https://leetcode.com/problems/add-digits/
 ==============================================================================
 Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
 
