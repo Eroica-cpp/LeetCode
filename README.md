@@ -7,7 +7,6 @@ Progress
 ------------------
 210+/220 questions completed.
 
-|---|----------|------------|----------|
 | # | Question | Difficulty | Solution |
 |---|----------|------------|----------|
 |   1   |   Two Sum |   Medium  |       |
@@ -281,7 +280,6 @@ Progress
 |   286 |   Walls and Gates     |   Medium  |       |
 |   287 |   Find the Duplicate Number   |   Hard    |       |
 |   288 |   Unique Word Abbreviation    |   Easy    |       |
-|---|----------|------------|----------|
 
 
 License
